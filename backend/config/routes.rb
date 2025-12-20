@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # API routes
   namespace :api do
     get 'health', to: 'health#index'
+    get 'profile', to: 'profiles#index'
+    get 'about', to: 'abouts#index'
+    get 'experiences', to: 'experiences#index'
+    get 'projects', to: 'projects#index'
+    get 'skills', to: 'skills#index'
   end
 
   # Defines the root path route ("/")
