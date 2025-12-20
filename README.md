@@ -1,6 +1,6 @@
 # Portfolio Project
 
-A full-stack portfolio application built with Ruby on Rails (API) and React (Vite). Not conventional at all, but it is just a portfolio. I don't feel like it needs to be crazy, I just want to use Rails and React.
+A full-stack portfolio application built with Ruby on Rails (API) and React (Vite). Not conventional at all, but it is just a portfolio. I don't feel like it needs to be crazy, I just want to use Rails and React. Currently not deployed, but you can pull the repository yourself and follow the setup instructions to see what I got! However, it is eerily similar to my LinkedIn profile.
 
 ## Tech Stack
 
