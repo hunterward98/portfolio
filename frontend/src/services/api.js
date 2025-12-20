@@ -31,12 +31,19 @@ export const api = {
     return response.json();
   },
 
+  async getEducations() {
+    const response = await fetch(`${API_BASE_URL}/educations`);
+    if (!response.ok) throw new Error('Failed to fetch educations');
+    return response.json();
+  },
+
   async getAllPortfolioData() {
-    const [profile, about, experiences, projects, skills] = await Promise.all([
+    const [profile, about, experiences, projects, educations, skills] = await Promise.all([
       this.getProfile(),
       this.getAbout(),
       this.getExperiences(),
       this.getProjects(),
+      this.getEducations(),
       this.getSkills(),
     ]);
 
@@ -45,6 +52,7 @@ export const api = {
       about,
       experience: experiences,
       projects,
+      educations,
       skills,
     };
   },

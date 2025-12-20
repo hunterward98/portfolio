@@ -4,6 +4,7 @@ About.destroy_all
 Experience.destroy_all
 Project.destroy_all
 Skill.destroy_all
+Education.destroy_all
 
 puts "Creating profile..."
 Profile.create!(
@@ -88,8 +89,13 @@ Skill.create!(
 )
 
 Skill.create!(
+  category: "Soft skills",
+  items: ["Cross-team collaboration", "Mentorship", "Creative and purpose driven", "Diagnostic approach"]
+)
+
+Skill.create!(
   category: "Backend",
-  items: ["Ruby on Rails", "Node.js", "Sidekiq", "RESTful APIs"]
+  items: ["Ruby on Rails", "Sidekiq", "RESTful APIs"]
 )
 
 Skill.create!(
@@ -99,17 +105,42 @@ Skill.create!(
 
 Skill.create!(
   category: "Tools and DevOps",
-  items: ["Git", "GitHub/Gitlab", "Docker", "VS Code", "Linux", "CI/CD"]
-)
-
-Skill.create!(
-  category: "Certifications",
-  items: ["PI System Administrator", "Engineer In Training"]
+  items: ["Git", "GitHub/Gitlab", "Sentry", "Docker", "VS Code", "RubyMine", "Linux", "Drone CI", "Jira", "Confluence"]
 )
 
 Skill.create!(
   category: "Other",
   items: ["Agile/Scrum", "Test-Driven Development", "Problem Solving"]
+)
+
+puts "Creating educations..."
+Education.create!(
+  degree: "Bachelor of Science in Computer Engineering",
+  minors: ["Computer Science"],
+  school: "Gonzaga University",
+  location: "Spokane, WA",
+  graduation_date: "May 2021",
+  honors: [
+    "Dean's list - December 2020 & May 2021"
+  ]
+)
+
+Education.create!(
+  degree: "Engineer In Training (EIT)",
+  school: "National Council of Examiners for Engineering and Surveying",
+  location: "Washington State",
+  graduation_date: "2022",
+  credential_id: "22006315",
+  verification_url: "https://professions.dol.wa.gov/s/license-lookup"
+)
+
+Education.create!(
+  degree: "PI System Administrator",
+  school: "OSIsoft (now AVEVA)",
+  location: "United States",
+  graduation_date: "2021",
+  credential_id: "jsjvpd9rr4o6",
+  verification_url: "https://verify.skilljar.com/c/jsjvpd9rr4o6"
 )
 
 puts "Seed data created successfully!"
@@ -118,3 +149,4 @@ puts "About: #{About.count}"
 puts "Experiences: #{Experience.count}"
 puts "Projects: #{Project.count}"
 puts "Skills: #{Skill.count}"
+puts "Educations: #{Education.count}"

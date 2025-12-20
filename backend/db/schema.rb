@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2025_12_20_073339) do
+ActiveRecord::Schema[8.1].define(version: 2025_12_20_234336) do
   create_table "abouts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.text "summary"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "credential_id"
+    t.string "degree"
+    t.string "graduation_date"
+    t.text "honors"
+    t.string "location"
+    t.text "minors"
+    t.string "school"
+    t.datetime "updated_at", null: false
+    t.string "verification_url"
   end
 
   create_table "experiences", force: :cascade do |t|

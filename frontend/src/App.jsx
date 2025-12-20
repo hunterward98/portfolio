@@ -3,6 +3,7 @@ import Header from './components/Header';
 import About from './components/About';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
 import { api } from './services/api';
@@ -69,6 +70,7 @@ function App() {
         <About data={portfolioData.about} />
         <Experience data={portfolioData.experience} />
         <Projects data={portfolioData.projects} />
+        <Education data={portfolioData.educations} />
         <Skills data={portfolioData.skills} />
       </main>
       <Footer />

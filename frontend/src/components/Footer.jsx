@@ -7,9 +7,6 @@ export default function Footer() {
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <p className="text-primary-100 text-sm mb-2">
-            © {currentYear} Hunter Ward. All rights reserved.
-          </p>
           <p className="text-primary-200/70 text-xs flex items-center justify-center gap-2">
             <span>Built with</span>
             <span className="text-accent-300 font-semibold">React</span>

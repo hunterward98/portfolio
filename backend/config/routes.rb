@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     get 'about', to: 'abouts#index'
     get 'experiences', to: 'experiences#index'
     get 'projects', to: 'projects#index'
+    get 'educations', to: 'educations#index'
     get 'skills', to: 'skills#index'
   end
 
