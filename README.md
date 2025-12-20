@@ -1,13 +1,13 @@
 # Portfolio Project
 
-A full-stack portfolio application built with Ruby on Rails (API) and React (Vite).
+A full-stack portfolio application built with Ruby on Rails (API) and React (Vite). Not conventional at all, but it is just a portfolio. I don't feel like it needs to be crazy, I just want to use Rails and React.
 
 ## Tech Stack
 
 ### Backend
-- **Ruby**: 3.3.0
+- **Ruby**: 3.3.6
 - **Rails**: 8.1.1 (API mode)
-- **Database**: PostgreSQL
+- **Database**: SQLite 3
 - **CORS**: Configured for frontend communication
 
 ### Frontend
