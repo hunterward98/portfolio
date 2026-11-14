@@ -57,9 +57,9 @@ export const content: Content = {
       start: "Apr 2026",
       end: "Present",
       points: [
-        "Migrated 200+ legacy Java tests to Playwright across payment processing and business-intelligence reporting as my onboarding project, cutting CI time by over 60%.",
-        "Spearheaded the test initiative for the core SaaS product, raising coverage from 62% to 85%.",
-        "Automated manual test plans with Playwright, saving 120+ labor hours per week.",
+        "Rebuilt 200+ flaky legacy Java tests from scratch in Playwright across payment processing and BI reporting as my onboarding project, then restructured CI stages and added affected-suite runs, cutting pipeline time from about an hour to 20 minutes.",
+        "Automated manual test plans for a 10+ person QA team, freeing 120+ labor hours per week; presented the results to leadership.",
+        "Moved on to core product work, writing integration tests for core business logic that raised coverage from 62% to 85% and caught BI reporting data bugs before they reached customers.",
       ],
     },
     {
