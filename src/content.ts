@@ -71,7 +71,6 @@ export const content: Content = {
       points: [
         "Went from zero Rails or Vue experience to shipping production code in two weeks; promoted from Junior to Software Engineer in six months.",
         "Core engineer on a small team that built an in-house communications and workflow platform for 3M+ clients, handling high-volume email ingestion and integrating 4 internal APIs; cut customer email resolution time by 40%.",
-        "Became the go-to engineer for the email and communications pipeline and onboarded new hires onto it.",
         "Led design of a dynamic form builder that turns complex government forms, with branching conditional logic and filled-PDF generation, into guided interfaces; raised submission rates 30% and was adopted by 4 product teams.",
         "Led a planned PostgreSQL-to-MongoDB cutover for form management across 150+ websites, improving load times and eliminating schema duplication.",
         "Diagnosed intermittent production failures spanning Rails and Vue microservices by tracing logs across service boundaries to an anomalous record, then working through model relationships to the root cause.",
