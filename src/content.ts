@@ -107,7 +107,7 @@ export const content: Content = {
     {
       name: "Cue",
       blurb:
-        "A deliberately simple Jira alternative for one-person departments: the lone designer, marketer, or IT person fielding requests from an entire office. Inspired by watching someone close to me drown in requests.",
+        "An open-source, deliberately simple Jira alternative for one-person departments: the lone designer, marketer, or IT person fielding requests from an entire office. Inspired by watching someone close to me drown in requests.",
       tech: ["Rails 8", "React 19", "TypeScript", "Inertia.js", "PostgreSQL", "Tailwind", "Kamal"],
       href: "https://github.com/hunterward98/cue",
       dates: "Jul 2026 – Present",
