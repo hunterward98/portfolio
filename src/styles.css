@@ -256,7 +256,7 @@ h3 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 /* Frosted translucent-green shell. */
