@@ -1,122 +1,39 @@
-# Portfolio Project
+# Portfolio
 
-A full-stack portfolio application built with Ruby on Rails (API) and React (Vite). Not conventional at all, but it is just a portfolio. I don't feel like it needs to be crazy, I just want to use Rails and React. Currently not deployed, but you can pull the repository yourself and follow the setup instructions to see what I got! However, it is eerily similar to my LinkedIn profile.
+A single static page: Vite + vanilla TypeScript, a hand-rolled WebGL hero, scroll reveals, an ASCII self-portrait, and a hidden terminal (press `` ` ``).
 
-## Tech Stack
+## Run it
 
-### Backend
-- **Ruby**: 3.3.6
-- **Rails**: 8.1.1 (API mode)
-- **Database**: SQLite 3
-- **CORS**: Configured for frontend communication
-
-### Frontend
-- **React**: 19.2.0
-- **Vite**: 7.2.4
-- **Build Tool**: Vite with React plugin
-
-## Project Structure
-I am just using one directory to manage the frontend and backend for simplicity. It's a portfolio, not some crazy wild in-house application.
-
-```
-portfolio/
-├── backend/          # Rails API application
-│   ├── app/
-│   ├── config/
-│   ├── db/
-│   └── ...
-├── frontend/         # React + Vite application
-│   ├── src/
-│   ├── public/
-│   └── ...
-└── README.md
-```
-
-## Getting Started
-
-### Backend Setup
-
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
-
-3. Set up the database:
-   ```bash
-   rails db:create db:migrate
-   ```
-
-4. Start the Rails server:
-   ```bash
-   rails server
-   ```
-
-   The API will run on `http://localhost:3000`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
-
-2. Install dependencies (already done):
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-   The React app will run on `http://localhost:5173`
-
-## Development
-
-### Running Both Applications
-
-You'll need two terminal windows:
-
-**Terminal 1 - Backend:**
 ```bash
-cd backend
-rails server
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # typecheck + build to dist/
+npm run preview    # serve the production build
 ```
 
-**Terminal 2 - Frontend:**
+## Editing
+
+| What | Where |
+| --- | --- |
+| All copy (bio, experience, projects, skills, links) | `src/content.ts` |
+| ASCII portrait | `src/portrait.txt` |
+| Styles / colors | `src/styles.css` (tokens at the top) |
+| Hero background shader | `src/hero-shader.ts` |
+| Terminal commands | `src/terminal.ts` |
+| Resume | drop it at `public/resume.pdf` |
+
+Content is rendered into `index.html` at build time (see `vite.config.ts`), so the page is plain HTML that works without JavaScript; scripts only layer effects on top.
+
+## ASCII portrait
+
 ```bash
-cd frontend
-npm run dev
+npm run portrait -- path/to/photo.jpg --width 90
 ```
 
-### CORS Configuration
+Options: `--width` (columns), `--contrast`, `--gamma`, `--invert`, `--ramp " .:-=+*#%@"`, `--out`. Use a tightly cropped head-and-shoulders photo against a plain background, iterate on contrast/gamma, then hand-edit `src/portrait.txt` to clean it up.
 
-The Rails API is configured to accept requests from:
-- `http://localhost:5173`
-- `http://127.0.0.1:5173`
+## Deploy
 
-Configuration can be found in [backend/config/initializers/cors.rb](backend/config/initializers/cors.rb).
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds and publishes `dist/` to GitHub Pages. One-time setup: repo **Settings → Pages → Source: GitHub Actions**.
 
-## Available Scripts
-
-### Backend (Rails)
-- `rails server` - Start the development server
-- `rails console` - Open Rails console
-- `rails db:migrate` - Run database migrations
-- `rails routes` - View all API routes
-
-### Frontend (React/Vite)
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-
-## License
-
-This is a personal portfolio project. That's all there is to it!
+Custom domain: add `public/CNAME` containing just the domain (e.g. `example.com`), then point DNS at GitHub Pages.
