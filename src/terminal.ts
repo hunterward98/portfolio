@@ -13,11 +13,19 @@ const sections: Record<string, () => string> = {
     c.experience
       .map((e) => `${e.role} @ ${e.company} (${e.start} – ${e.end})\n${e.points.map((p) => `  - ${p}`).join("\n")}`)
       .join("\n\n"),
-  projects: () => c.projects.map((p) => `${p.name}  [${p.tech.join(", ")}]\n  ${p.blurb}`).join("\n\n"),
+  projects: () =>
+    c.projects
+      .map(
+        (p) =>
+          `${p.name}  [${p.tech.join(", ")}]${p.href ? `  ${p.href}` : ""}\n  ${p.blurb}` +
+          (p.points ?? []).map((x) => `\n  - ${x}`).join(""),
+      )
+      .join("\n\n"),
   skills: () =>
     c.skills.map((s) => `${s.group.padEnd(12)}${s.items.join(", ")}`).join("\n") +
     "\n\n" +
-    c.education.map((e) => `${e.degree}, ${e.school} (${e.years})`).join("\n"),
+    c.education.map((e) => `${e.degree}, ${e.school}${e.years ? ` (${e.years})` : ""}`).join("\n") +
+    c.certifications.map((x) => `\n${x}`).join(""),
 };
 
 const commands: Record<string, (args: string[]) => string | void> = {

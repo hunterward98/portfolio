@@ -274,6 +274,24 @@ h3 {
   transform: translateY(-2px);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 0 24px rgba(141, 198, 63, 0.15);
 }
+.card:only-child {
+  grid-column: 1 / -1;
+}
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.card .points {
+  color: var(--muted);
+  padding-left: 1.1rem;
+  margin: 0 0 1rem;
+}
+.card .points li + li {
+  margin-top: 0.25rem;
+}
 .card p {
   color: var(--muted);
   margin: 0.5rem 0 1rem;

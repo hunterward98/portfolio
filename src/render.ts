@@ -52,7 +52,7 @@ export function renderSections(c: Content): string {
         <li class="job">
           <div class="job-head">
             <h3>${esc(e.role)} <span class="at">@ ${esc(e.company)}</span></h3>
-            <span class="dates">${esc(e.start)} – ${esc(e.end)}</span>
+            <span class="dates">${e.location ? `${esc(e.location)} · ` : ""}${esc(e.start)} – ${esc(e.end)}</span>
           </div>
           <ul>${e.points.map((p) => `<li>${esc(p)}</li>`).join("")}</ul>
         </li>`,
@@ -72,8 +72,12 @@ export function renderSections(c: Content): string {
               : esc(p.name);
             return `
         <article class="card">
-          <h3>${title}</h3>
+          <div class="card-head">
+            <h3>${title}</h3>
+            ${p.dates ? `<span class="dates">${esc(p.dates)}</span>` : ""}
+          </div>
           <p>${esc(p.blurb)}</p>
+          ${p.points?.length ? `<ul class="points">${p.points.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : ""}
           <ul class="tags">${p.tech.map((t) => `<li>${esc(t)}</li>`).join("")}</ul>
         </article>`;
           })
@@ -94,10 +98,16 @@ export function renderSections(c: Content): string {
         ${c.education
           .map(
             (e) =>
-              `<li><strong>${esc(e.degree)}</strong>, ${esc(e.school)} <span class="dates">${esc(e.years)}</span></li>`,
+              `<li><strong>${esc(e.degree)}</strong>, ${esc(e.school)}${e.years ? ` <span class="dates">${esc(e.years)}</span>` : ""}</li>`,
           )
           .join("")}
       </ul>
+      ${
+        c.certifications.length
+          ? `<h3 class="sub">certifications</h3>
+      <ul class="edu">${c.certifications.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>`
+          : ""
+      }
     </section>`;
 
   return about + experience + projects + skills;
