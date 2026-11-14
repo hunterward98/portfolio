@@ -45,10 +45,10 @@ export interface Content {
 export const content: Content = {
   name: "Hunter Ward",
   role: "Software Engineer",
-  tagline: "I may not know your framework, but I've proven that I can figure out your shit.",
-  bio: "I'm a software engineer in Washington State with five years of shipping production software. I started out in industrial plant data systems, went from never having touched Rails to shipping production code in two weeks, and built RacePicks, a hobby project that somehow grew to 200+ players. Stacks change; the job doesn't: understand the system, find the real problem, and own it all the way to production.",
+  tagline: "I may not know your framework, but I can figure out your shit.",
+  bio: "I'm a software engineer in Washington State with five years of experience. I started out in industrial plant data systems, then went from never having touched a web framework to building features and becoming a go-to resource. I'll acknowledge when I don't know it, and I've proven I'll figure it out.",
   outside:
-    "Outside of work, I'm old-school at heart. I keep my late-'90s cars running with my own wrenches instead of trading them in, and I'd still rather play the original Halo games or Old School RuneScape than whatever came out this year. It's why this site looks like a terminal, and why the RacePicks car is inspired by a '70s endurance racer. When I'm not under a car, I'm building Lego or woodworking. I like working with my hands, and I like making things last.",
+    "Outside of work, I love using my hands. I enjoy keeping a late 90s car running, and woodworking. At heart, I love the simplicity.",
   hobbies: [
     ["cars", "late-'90s, kept alive with my own wrenches rather than traded in"],
     ["motorsport", "obviously (see: RacePicks)"],
@@ -69,9 +69,9 @@ export const content: Content = {
       start: "Apr 2026",
       end: "Present",
       points: [
-        "Rebuilt 200+ flaky legacy Java tests from scratch in Playwright across payment processing and BI reporting as my onboarding project, then restructured CI stages and added affected-suite runs, cutting pipeline time from about an hour to 20 minutes.",
-        "Automated manual test plans for a 10+ person QA team, freeing 120+ labor hours per week; presented the results to leadership.",
-        "Moved on to core product work, writing integration tests for core business logic that raised coverage from 62% to 85% and caught BI reporting data bugs before they reached customers.",
+        "Rebuilt 400+ flaky legacy Java tests from scratch in Playwright across payment processing and BI reporting as my onboarding project, then restructured CI stages and added affected-suite runs, cutting pipeline time from about an hour to 20 minutes.",
+        "Automated manual test plans for a 30+ person QA team, freeing 120+ labor hours per release.",
+        "Moved on to core product work, writing integration tests for core business logic that raised coverage from below 60% to nearly 80%.",
       ],
     },
     {
@@ -81,12 +81,12 @@ export const content: Content = {
       start: "May 2022",
       end: "Oct 2025",
       points: [
-        "Went from zero Rails or Vue experience to shipping production code in two weeks; promoted from Junior to Software Engineer in six months.",
-        "Core engineer on a small team that built an in-house communications and workflow platform for 3M+ clients, handling high-volume email ingestion and integrating 4 internal APIs; cut customer email resolution time by 40%.",
-        "Led design of a dynamic form builder that turns complex government forms, with branching conditional logic and filled-PDF generation, into guided interfaces; raised submission rates 30% and was adopted by 4 product teams.",
+        "Core engineer on a small team that built an in-house communications and workflow platform for 3M+ clients, handling high-volume email ingestion and integrating internal APIs; cut customer email resolution time by 40%.",
+        "Increased client form submission rates 30% by leading design of a dynamic form builder converting complex government forms into guided interfaces; later adopted by 4 product teams.",
         "Led a planned PostgreSQL-to-MongoDB cutover for form management across 150+ websites, improving load times and eliminating schema duplication.",
         "Diagnosed intermittent production failures spanning Rails and Vue microservices by tracing logs across service boundaries to an anomalous record, then working through model relationships to the root cause.",
         "Designed an email tagging and categorization system that surfaced trends in customer issues, giving product and support concrete data to prioritize with.",
+        "Mentored junior developers during onboarding and beyond, serving as the go-to resource for two core business products, or as just a friendly pair programmer."
       ],
     },
     {
@@ -97,6 +97,7 @@ export const content: Content = {
       end: "Apr 2022",
       points: [
         "Migrated plant data historian and monitoring systems for five NRG natural gas power plants in Southern California during an ownership transfer, preserving historical data.",
+        "Architected C# integration with OSIsoft PI API to allow customers to maintain and clean up their PI system, saving tens of thousands in license and infrastructure cost.",
         "Set up real-time monitoring and alerting for the largest nitrogen fertilizer plant in the US, enabling preventative maintenance and increasing operational uptime.",
       ],
     },
@@ -119,13 +120,13 @@ export const content: Content = {
     {
       name: "Cue",
       blurb:
-        "An open-source, deliberately simple Jira alternative for one-person departments: the lone designer, marketer, or IT person fielding requests from an entire office. Inspired by watching someone close to me drown in requests.",
+        "An open-source, deliberately simple Jira alternative for one-person departments. Remarkably convenient for someone with 30+ regular clients, like the sole marketing role at a real estate office.",
       tech: ["Rails 8", "React 19", "TypeScript", "Inertia.js", "PostgreSQL", "Tailwind", "Kamal"],
       href: "https://github.com/hunterward98/cue",
       dates: "Jul 2026 – Present",
       points: [
         "Multi-tenant SaaS with org-scoped tenancy (acts_as_tenant plus composite foreign keys), per-assignee boards with WIP limits, configurable cue lifecycles, @-mentions, hooks, and audit trails.",
-        "Enforces 100% line and branch coverage across Rails and React as a hard CI gate with no exemptions, alongside strict TypeScript and a pinned React Doctor score of 100.",
+        "Enforces 100% line and branch coverage across Rails and React as a hard CI gate with no exemptions; emphasizing the test driven development philosophy.",
         "Designed to run on a single low-cost VPS via Kamal, using Rails 8's Solid Queue and Solid Cache instead of Redis to keep hosting costs down.",
       ],
     },
