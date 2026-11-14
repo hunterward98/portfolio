@@ -114,7 +114,6 @@ export const content: Content = {
       points: [
         "Multi-tenant SaaS with org-scoped tenancy (acts_as_tenant plus composite foreign keys), per-assignee boards with WIP limits, configurable cue lifecycles, @-mentions, hooks, and audit trails.",
         "Enforces 100% line and branch coverage across Rails and React as a hard CI gate with no exemptions, alongside strict TypeScript and a pinned React Doctor score of 100.",
-        "Built primarily with AI agents under a documented workflow: 18 architecture decision records, detailed feature plans, and a self-improvement loop that turns repeated mistakes into agent instructions.",
         "Designed to run on a single low-cost VPS via Kamal, using Rails 8's Solid Queue and Solid Cache instead of Redis to keep hosting costs down.",
       ],
     },
