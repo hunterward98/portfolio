@@ -21,6 +21,7 @@ const sections: Record<string, () => string> = {
           (p.points ?? []).map((x) => `\n  - ${x}`).join(""),
       )
       .join("\n\n"),
+  hobbies: () => c.hobbies.map(([t, d]) => `${t.padEnd(12)}${d}`).join("\n"),
   skills: () =>
     c.skills.map((s) => `${s.group.padEnd(12)}${s.items.join(", ")}`).join("\n") +
     "\n\n" +
@@ -42,7 +43,11 @@ const commands: Record<string, (args: string[]) => string | void> = {
       "  exit              close the terminal",
     ].join("\n"),
   whoami: () => `${c.name}: ${c.role}. ${c.tagline}`,
-  ls: () => Object.keys(sections).map((s) => s + "/").join("  ") + "  portrait.txt",
+  ls: () =>
+    Object.keys(sections)
+      .filter((s) => s !== "hobbies")
+      .map((s) => s + "/")
+      .join("  ") + "  hobbies.txt  portrait.txt",
   cat: ([name = ""]) => {
     const key = name.replace(/[/]$|\.txt$/, "");
     if (key === "portrait") {

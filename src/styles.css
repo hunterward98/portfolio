@@ -217,6 +217,10 @@ h3 {
   max-width: 62ch;
   font-size: 1.1rem;
 }
+.outside {
+  color: var(--muted);
+  font-size: 1rem;
+}
 
 .timeline {
   list-style: none;

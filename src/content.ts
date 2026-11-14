@@ -30,6 +30,10 @@ export interface Content {
   role: string;
   tagline: string;
   bio: string;
+  /** Short "outside of work" paragraph shown under the bio. */
+  outside: string;
+  /** Longer version for the terminal's `cat hobbies.txt`. */
+  hobbies: [topic: string, detail: string][];
   links: Link[];
   experience: Experience[];
   projects: Project[];
@@ -43,6 +47,14 @@ export const content: Content = {
   role: "Software Engineer",
   tagline: "I may not know your framework, but I've proven that I can figure out your shit.",
   bio: "I'm a software engineer in Washington State with five years of shipping production software. I started out in industrial plant data systems, went from never having touched Rails to shipping production code in two weeks, and built RacePicks, a hobby project that somehow grew to 200+ players. Stacks change; the job doesn't: understand the system, find the real problem, and own it all the way to production.",
+  outside:
+    "Outside of work, I'm old-school at heart. I keep my late-'90s cars running with my own wrenches instead of trading them in, and I'd still rather play the original Halo games or Old School RuneScape than whatever came out this year. It's why this site looks like a terminal, and why the RacePicks car is inspired by a '70s endurance racer. When I'm not under a car, I'm building Lego or woodworking. I like working with my hands, and I like making things last.",
+  hobbies: [
+    ["cars", "late-'90s, kept alive with my own wrenches rather than traded in"],
+    ["motorsport", "obviously (see: RacePicks)"],
+    ["games", "the original Halo games, Old School RuneScape, anything with an older art style"],
+    ["hands", "Lego and woodworking when it's not wrenches"],
+  ],
   links: [
     { label: "resume", href: "resume.pdf", button: "A" },
     { label: "github", href: "https://github.com/hunterward98", button: "X" },

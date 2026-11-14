@@ -40,6 +40,7 @@ export function renderSections(c: Content): string {
     <section id="about" class="reveal">
       <h2 class="prompt"><span class="path">~/about</span> <span class="dollar">$</span> <span class="cmd">cat bio.txt</span></h2>
       <p class="bio">${esc(c.bio)}</p>
+      <p class="bio outside">${esc(c.outside)}</p>
     </section>`;
 
   const experience = `
