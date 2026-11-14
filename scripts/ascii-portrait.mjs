@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Convert a photo into ASCII art for the hero.
 //
-//   npm run portrait -- path/to/photo.jpg [--width 90] [--invert] [--contrast 1.2] [--ramp " .:-=+*#%@"]
+//   npm run portrait -- path/to/photo.jpg [--width 90] [--clahe] [--sharpen] [--invert] [--contrast 1.2] [--gamma 1.0] [--ramp " .:-=+*#%@"]
 //
 // Writes src/portrait.txt (or --out <file>). Tips:
 //   - Use a tightly cropped head-and-shoulders shot with a plain background.
@@ -20,8 +20,10 @@ const { values, positionals } = parseArgs({
     invert: { type: "boolean", default: false },
     contrast: { type: "string", default: "1.15" },
     gamma: { type: "string", default: "1.0" },
+    clahe: { type: "boolean", default: false }, // local contrast: brings out facial features
+    sharpen: { type: "boolean", default: false },
     ramp: { type: "string", default: " .:-=+*#%@" },
-    aspect: { type: "string", default: "0.5" }, // glyph width / height
+    aspect: { type: "string", default: "0.6" }, // glyph width / height
     out: { type: "string", default: "src/portrait.txt" },
   },
 });
@@ -36,11 +38,15 @@ const cols = Number(values.width);
 const meta = await sharp(input).metadata();
 const rows = Math.round(cols * (meta.height / meta.width) * Number(values.aspect));
 
-const { data } = await sharp(input)
-  .rotate() // respect EXIF orientation
+// Pre-process at full resolution (features survive better), then downsample.
+let img = sharp(input).rotate().greyscale(); // rotate() respects EXIF orientation
+if (values.clahe) img = img.clahe({ width: 64, height: 64, maxSlope: 3 });
+if (values.sharpen) img = img.sharpen({ sigma: 1.5 });
+const pre = await img.png().toBuffer();
+const { data } = await sharp(pre)
   .resize(cols, rows, { fit: "fill" })
-  .greyscale()
   .normalise() // stretch to full black..white range
+  .toColourspace("b-w")
   .raw()
   .toBuffer({ resolveWithObject: true });
 

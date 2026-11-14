@@ -136,8 +136,7 @@ h1 {
 
 .portrait {
   margin: 0;
-  font: 700 clamp(4px, 0.62vw, 7.5px) / 1 var(--mono);
-  letter-spacing: 0.08em;
+  font: 700 clamp(3px, 0.42vw, 6px) / 1 var(--mono);
   color: var(--accent);
   text-shadow: 0 0 6px rgba(94, 234, 212, 0.35);
   white-space: pre;
@@ -356,7 +355,7 @@ kbd {
   color: #fca5a5;
 }
 .term-out .ascii {
-  font-size: 4px;
+  font-size: 3px;
   line-height: 1;
   white-space: pre;
   color: var(--accent);
@@ -396,7 +395,7 @@ kbd {
   }
   .portrait {
     order: -1;
-    font-size: clamp(3px, 1.15vw, 6px);
+    font-size: clamp(2.5px, 0.95vw, 5px);
     justify-self: center;
   }
   .skills div {
