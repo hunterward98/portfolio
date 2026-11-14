@@ -125,8 +125,8 @@ h1 {
   margin: 0;
 }
 .tagline {
-  color: var(--muted);
-  max-width: 32ch;
+  color: var(--text);
+  max-width: 34ch;
   font-size: 1.1rem;
 }
 .links {
