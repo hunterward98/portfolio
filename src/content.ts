@@ -3,6 +3,8 @@
 export interface Link {
   label: string;
   href: string;
+  /** Original-controller face button: A green, B red, X blue, Y yellow. */
+  button?: "A" | "B" | "X" | "Y";
 }
 
 export interface Experience {
@@ -38,10 +40,10 @@ export const content: Content = {
   tagline: "I build reliable software and occasionally make it shiny.",
   bio: "Placeholder bio. Two or three sentences about what you work on, what you care about, and what you're looking for next.",
   links: [
-    { label: "resume", href: "resume.pdf" },
-    { label: "github", href: "https://github.com/hunterward98" },
-    { label: "linkedin", href: "https://www.linkedin.com/in/your-handle" },
-    { label: "email", href: "mailto:you@example.com" },
+    { label: "resume", href: "resume.pdf", button: "A" },
+    { label: "github", href: "https://github.com/hunterward98", button: "X" },
+    { label: "linkedin", href: "https://www.linkedin.com/in/your-handle", button: "Y" },
+    { label: "email", href: "mailto:you@example.com", button: "B" },
   ],
   experience: [
     {

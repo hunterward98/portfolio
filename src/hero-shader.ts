@@ -55,9 +55,10 @@ void main() {
   vec2 f = fract(gl_FragCoord.xy / cell) - 0.5;
   float dot = 1.0 - smoothstep(0.25, 0.4, length(f));
 
-  vec3 teal = vec3(0.37, 0.92, 0.83);
-  vec3 pink = vec3(0.94, 0.67, 0.99);
-  vec3 col = mix(teal, pink, smoothstep(0.3, 0.8, q.x));
+  // Translucent shell green drifting into a deeper emerald.
+  vec3 shell = vec3(0.55, 0.78, 0.25);
+  vec3 emerald = vec3(0.15, 0.55, 0.3);
+  vec3 col = mix(shell, emerald, smoothstep(0.3, 0.8, q.x));
   gl_FragColor = vec4(col * lit * dot * 0.5, 1.0);
 }`;
 

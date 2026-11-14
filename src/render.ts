@@ -13,7 +13,11 @@ export function renderHero(c: Content, portrait: string): string {
   const links = c.links
     .map((l) => {
       const ext = isExternal(l.href) ? ' target="_blank" rel="noopener"' : "";
-      return `<a class="btn" href="${esc(l.href)}"${ext}>[${esc(l.label)}]</a>`;
+      const face = l.button
+        ? `<span class="face" aria-hidden="true">${l.button}</span>`
+        : "";
+      const cls = l.button ? `btn btn-${l.button.toLowerCase()}` : "btn";
+      return `<a class="${cls}" href="${esc(l.href)}"${ext}>${face}${esc(l.label)}</a>`;
     })
     .join("\n        ");
   return `
