@@ -46,7 +46,7 @@ export const content: Content = {
   links: [
     { label: "resume", href: "resume.pdf", button: "A" },
     { label: "github", href: "https://github.com/hunterward98", button: "X" },
-    { label: "linkedin", href: "https://www.linkedin.com/in/your-handle", button: "Y" },
+    { label: "linkedin", href: "https://www.linkedin.com/in/hunter-ward-eit/", button: "Y" },
     { label: "email", href: "mailto:hunterdward98@gmail.com", button: "B" },
   ],
   experience: [
