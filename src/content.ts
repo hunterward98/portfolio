@@ -45,10 +45,10 @@ export interface Content {
 export const content: Content = {
   name: "Hunter Ward",
   role: "Software Engineer",
-  tagline: "I may not know your framework, but I can figure out your shit.",
-  bio: "I'm a software engineer in Washington State with five years of experience. I started out in industrial plant data systems, then went from never having touched a web framework to building features and becoming a go-to resource. I'll acknowledge when I don't know it, and I've proven I'll figure it out.",
+  tagline: "I'm a builder that can solve problems before you even see them.",
+  bio: "I'm an experienced software engineer that got started out in industrial plant data systems. I had never touched a web framework, just embedded systems, and fell in love. I'm honest when I don't know something, but I have always found a way.",
   outside:
-    "Outside of work, I love using my hands. I enjoy keeping a late 90s car running, and woodworking. At heart, I love the simplicity.",
+    "To keep my mind fresh, I use my hands. I particularly enjoy wrenching on older cars, where I've extended my problem solving to diagnose drive train or suspension issues and address weak points before they become a problem.",
   hobbies: [
     ["cars", "late-'90s, kept alive with my own wrenches rather than traded in"],
     ["motorsport", "obviously (see: RacePicks)"],
@@ -69,9 +69,10 @@ export const content: Content = {
       start: "Apr 2026",
       end: "Present",
       points: [
-        "Rebuilt 400+ flaky legacy Java tests from scratch in Playwright across payment processing and BI reporting as my onboarding project, then restructured CI stages and added affected-suite runs, cutting pipeline time from about an hour to 20 minutes.",
+        "Raised integration test coverage of core features from as low as 5% up to 81% in a matter of weeks, writing over 200 tests for business-critical REST endpoints, finding over 20 defects.",
+        "Moved 9-suite Playwright pipeline from Bamboo to GitHub Actions to replace expiring PATs with GitHub App Tokens, reducing test flakiness, and test run time by over 20 minutes, allowing devs to capture potential errors at PR time.",
         "Automated manual test plans for a 30+ person QA team, freeing 120+ labor hours per release.",
-        "Moved on to core product work, writing integration tests for core business logic that raised coverage from below 60% to nearly 80%.",
+        "Built and shipped AI agent workflows to standardize test writing across a 120+ person engineering team, allowing for new features to have tests written above industry standards.",
       ],
     },
     {
@@ -81,12 +82,12 @@ export const content: Content = {
       start: "May 2022",
       end: "Oct 2025",
       points: [
-        "Core engineer on a small team that built an in-house communications and workflow platform for 3M+ clients, handling high-volume email ingestion and integrating internal APIs; cut customer email resolution time by 40%.",
-        "Increased client form submission rates 30% by leading design of a dynamic form builder converting complex government forms into guided interfaces; later adopted by 4 product teams.",
-        "Led a planned PostgreSQL-to-MongoDB cutover for form management across 150+ websites, improving load times and eliminating schema duplication.",
+        "Core engineer on a small team that built an in-house communications and workflow platform for 3M+ clients, handling high-volume email ingestion and integrating internal APIs so representatives had a central location to communicate with and manage a client.",
+        "Led design of a dynamic form builder that converted complex government forms into guided interfaces to improve user submission rates; later adopted by 4 product teams.",
+        "Led a planned PostgreSQL-to-MongoDB cutover for form management across 150+ websites, improving load times and eliminating overly complex database schema and model management.",
         "Diagnosed intermittent production failures spanning Rails and Vue microservices by tracing logs across service boundaries to an anomalous record, then working through model relationships to the root cause.",
-        "Designed an email tagging and categorization system that surfaced trends in customer issues, giving product and support concrete data to prioritize with.",
-        "Mentored junior developers during onboarding and beyond, serving as the go-to resource for two core business products, or as just a friendly pair programmer."
+        "Designed an email tagging and categorization system that surfaced trends in customer communications, giving product and support concrete data to prioritize features and bugs.",
+        "Mentored junior developers during onboarding and in early career, serving as a go-to resource for two core business products, or as just a friendly pair programmer."
       ],
     },
     {
@@ -97,7 +98,7 @@ export const content: Content = {
       end: "Apr 2022",
       points: [
         "Migrated plant data historian and monitoring systems for five NRG natural gas power plants in Southern California during an ownership transfer, preserving historical data.",
-        "Architected C# integration with OSIsoft PI API to allow customers to maintain and clean up their PI system, saving tens of thousands in license and infrastructure cost.",
+        "Architected C# integration with OSIsoft PI API to allow customers to maintain and clean up their PI system, saving tens of thousands in license and infrastructure costs across multiple companies.",
         "Set up real-time monitoring and alerting for the largest nitrogen fertilizer plant in the US, enabling preventative maintenance and increasing operational uptime.",
       ],
     },
@@ -109,7 +110,7 @@ export const content: Content = {
         "A fantasy motorsport platform that started as a hobby project and grew to 200+ users, 25+ leagues, and 28,000+ picks through word of mouth and racing communities. Sole engineer: design, code, infrastructure, and incident response.",
       tech: ["Spring Boot", "React", "PostgreSQL", "AWS"],
       href: "https://racepicks.net",
-      dates: "Jan 2026 – Present",
+      dates: "Dec 2025 – Present",
       points: [
         "Built the scoring engine and a results pipeline that normalizes public and paid race-data APIs from 5 racing series into one model, with multi-tenant leagues, RBAC, and OAuth2/JWT auth.",
         "When a bad migration wiped out records for many users, restored them from RDS snapshots with custom SQL tooling in under two days, then added pick-safety checks and deletion guards to prevent a repeat.",
@@ -132,8 +133,8 @@ export const content: Content = {
     },
   ],
   skills: [
-    { group: "languages", items: ["Ruby", "Java", "TypeScript", "JavaScript", "Python", "SQL", "HTML", "CSS"] },
-    { group: "frameworks", items: ["Ruby on Rails", "Spring Boot", "React", "Vue", "Playwright", "Tailwind"] },
+    { group: "languages", items: ["Ruby", "Java", "TypeScript", "C++", "JavaScript", "Python", "SQL", "HTML", "CSS"] },
+    { group: "frameworks", items: ["Ruby on Rails", "Spring Boot", "React", "Vue", "Fast API", "Playwright", "Tailwind"] },
     { group: "databases", items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis"] },
     {
       group: "tools",
